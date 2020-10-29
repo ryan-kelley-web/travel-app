@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import Nasa from './components/Nasa';
+import OpenWeather from './components/OpenWeather';
+import ZomatoList from './components/Zomato/ZomatoList';
+
+
+function GeoLoc() {
+
+  navigator.geolocation.getCurrentPosition(function (position) {
+    console.log("Latitude is :", position.coords.latitude);
+    console.log("Longitude is :", position.coords.longitude);
+  });
+}
+  
+
 
 function App() {
+
+GeoLoc();
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
+
+
 
 export default App;
