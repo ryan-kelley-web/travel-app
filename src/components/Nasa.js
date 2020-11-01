@@ -4,22 +4,36 @@ import React, {useState, useEffect} from 'react';
 const baseUrl = 'https://api.nasa.gov/planetary/earth/imagery?';
 const key = 'mnwYfhf0SnptrqC5Dbjd5fso1QL26IzJKylLAZJL';
 
-const Nasa = () => {
-    const [longitude, setLongitude] = useState(0.00);
-    const [latitude, setLatitude] = useState(0.00);
+const Nasa = (props) => {
+    const [imgUrl, setImgUrl] = useState('');
 
     useEffect(() => {
-        if('geolocation' in navigator){
-            navigator.geolocation.getCurrentPosition((position) => {
-                setLongitude(position.coords.longitude);
-                setLatitude(position.coords.latitude);
-            })
+        if(props.lat && props.lon){
+            // Houston, TX coordinates
+            // let url = `https://api.nasa.gov/planetary/earth/imagery?lon=-95.33&lat=29.78&date=2018-01-01&dim=0.15&api_key=${key}`;
+            // Indianapolis, IN coordinates
+            // let url = `https://api.nasa.gov/planetary/earth/imagery?lon=-86.16&lat=39.77&date=2018-01-01&dim=0.15&api_key=${key}`;
+            console.log('Props lat:', props.lat);
+            console.log('Props lon:', props.lon);
+            let url = `${baseUrl}lon=${props.lon}&lat=${props.lat}&api_key=${key}`;
+            console.log(url);
+    
+            fetch(url)
+                // Checking what the response is returning (PNG)
+                // .then(res => res.text())
+                // .then(res => console.log(res))
+                .then(res => res.blob())
+                .then(blob => {
+                    let imgSrc = URL.createObjectURL(blob);
+                    setImgUrl(imgSrc);
+                })
+                .catch(err => console.log(err));
         }
     }, []);
 
-
     return (
         <div>
+            <img src={imgUrl} height='500px' width='500px' />
             {/* <Card>
                 <CardImg />
                 <CardBody>
@@ -32,10 +46,3 @@ const Nasa = () => {
 
 export default Nasa;
 
-// function GeoLoc() {
-
-//     navigator.geolocation.getCurrentPosition(function (position) {
-//       console.log("Latitude is :", position.coords.latitude);
-//       console.log("Longitude is :", position.coords.longitude);
-//     });
-//   }
