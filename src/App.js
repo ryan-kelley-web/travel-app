@@ -34,9 +34,9 @@ function App() {
 
   return (
     <div className="App">
-      <ZomatoList lat={lat} lon={lon}/>
+      {/* <ZomatoList lat={lat} lon={lon}/> */}
       <Nasa lat={lat} lon={lon}/>
-      <OpenWeather lat={lat} lon={lon}/>
+      {/* <OpenWeather lat={lat} lon={lon}/> */}
     
     </div>
   );
