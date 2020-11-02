@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-// import Nasa from './components/Nasa';
-// // import OpenWeather from './components/OpenWeather';
+import Nasa from './components/Nasa';
+import OpenWeather from './components/OpenWeather';
 import ZomatoList from './components/Zomato/ZomatoList';
 
 function App() {
@@ -28,8 +28,8 @@ function App() {
   return (
     <div className="App">
       <ZomatoList lat={lat} lon={lon} />
-      {/* <Nasa lat={lat} lon={lon} />
-      <OpenWeather lat={lat} lon={lon} /> */}
+      <Nasa lat={lat} lon={lon} />
+      <OpenWeather lat={lat} lon={lon} />
     </div>
   );
 };
