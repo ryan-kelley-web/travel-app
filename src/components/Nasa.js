@@ -42,6 +42,7 @@ const Nasa = (props) => {
                     <CardText>A satellite image based off your current location.</CardText>
                 </CardBody>
             </Card>
+            <hr />
         </div>
     );
 };
