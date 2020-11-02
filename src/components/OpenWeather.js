@@ -28,8 +28,9 @@ const OpenWeather = (props) => {
     return (
         <div>
             <h1>Weather:</h1>
-            <h3>The temperature right now is: {units == "F" ? weather.main.temp : (weather.main.temp - 32)*5/9} {units}</h3>
+            <p>The temperature right now is: {units == "F" ? weather.main.temp : (weather.main.temp - 32)*5/9} {units}</p>
             <Button onClick={()=> toggleUnits()}>Fahrenheit / Celsius</Button>
+            <hr />
         </div>
     )
 }

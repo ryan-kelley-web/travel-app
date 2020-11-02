@@ -17,7 +17,8 @@ const ZomatoRestaurants = (props) => {
         {/* <CardImg top width="100%" src={props.nearby_restaurants[0].restaurant.photos_url} alt="Good Eats 1 of 3" /> */}
         <CardBody>
           <CardTitle>
-          <h1>test!!!{props.name}</h1>
+          {/* <h1>test!!!{props.name}</h1> */}
+          <h1>Sorry, we're experiencing some issues gathering restaurants around you...</h1>
           </CardTitle> 
           {/*
           <CardSubtitle><p>Type of Cuisine:{props.restaurants[0].nearby_restaurants[0].restaurant.cuisines}</p></CardSubtitle>

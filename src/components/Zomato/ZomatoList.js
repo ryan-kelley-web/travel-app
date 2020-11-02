@@ -24,12 +24,11 @@ const ZomatoList = (props) => {
         <div>
             <h1>Great Eats Detected Nearby! Hope You're Hungry.</h1>
             <br />
-            <h3>Which of these are you in the mood for?</h3>
+            <p>Which of these are you in the mood for?</p>
             {console.log(restaurants)}
             {/* { restaurants.length > 0 ? <ZomatoRestaurant restaurants={restaurants} /> : null} */}
             <ZomatoRestaurant restaurants={restaurants} />
-
-
+            <hr />
         </div>
     )
 }

@@ -27,9 +27,12 @@ function App() {
 
   return (
     <div className="App">
-      <ZomatoList lat={lat} lon={lon} />
+      <br />
+      <h1 class='title'>Travel App</h1>
+      <br />
       <Nasa lat={lat} lon={lon} />
       <OpenWeather lat={lat} lon={lon} />
+      <ZomatoList lat={lat} lon={lon} />
     </div>
   );
 };
