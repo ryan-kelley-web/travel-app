@@ -4,6 +4,7 @@ import {
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 import ZomatoList from './ZomatoList';
+import ZomatoItem from './ZomatoItem'; 
 
 const ZomatoRestaurants = (props) => {
 
@@ -17,11 +18,15 @@ const ZomatoRestaurants = (props) => {
         {/* <CardImg top width="100%" src={props.nearby_restaurants[0].restaurant.photos_url} alt="Good Eats 1 of 3" /> */}
         <CardBody>
           <CardTitle>
+          {/* <h1>   {props.restaurants.map( (r) => r.restaurant.name)}</h1>  */}
+          { props.restaurants.map( (r, i) => <ZomatoItem restaurant={r.restaurant} key={i} myKey={i+1} /> ) }
+
+
+          {/* //^^can create new compon/file, call it R of fat arrow using r.yadda x3, pass as prop r.restaurant */}
           {/* <h1>test!!!{props.name}</h1> */}
-          <h1>Sorry, we're experiencing some issues gathering restaurants around you...</h1>
           </CardTitle> 
           {/*
-          <CardSubtitle><p>Type of Cuisine:{props.restaurants[0].nearby_restaurants[0].restaurant.cuisines}</p></CardSubtitle>
+          <CardSubtitle><p>Type of Cuisine:{props.restaurants.nearby_restaurants[0].restaurant.cuisines}</p></CardSubtitle>
           <CardText><p>Physical Location:{props.restaurants[0].nearby_restaurants[0].restaurant.location}</p></CardText>
           <Button><a href={props.restaurants[0].nearby_restaurants[0].restaurant.photos_url}>Tell 'em Sean, Lyndsay, and Ryan Sent Ya!</a></Button> */}
         </CardBody>
