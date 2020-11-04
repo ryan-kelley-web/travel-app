@@ -23,6 +23,7 @@ const ZomatoRestaurants = (props) => {
 
 
           {/* //^^can create new compon/file, call it R of fat arrow using r.yadda x3, pass as prop r.restaurant */}
+          {/* <h1>test!!!{props.name}</h1> */}
           </CardTitle> 
           {/*
           <CardSubtitle><p>Type of Cuisine:{props.restaurants.nearby_restaurants[0].restaurant.cuisines}</p></CardSubtitle>

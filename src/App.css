@@ -1,7 +1,26 @@
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif; 
+  /* color: white; */
   /* google font (belongs here?) */
+  background-color: skyblue;
+}
+
+button{
+  border-radius: 10px;
+  background-color: darkblue;
+  color: white;
+}
+
+img{
+  border-radius: 5px;
+  border-style: solid;
+}
+
+.title{
+  text-decoration: underline;
+  font-size: 50pt;
+  letter-spacing: 4px;
 }
 
 .App-logo {
