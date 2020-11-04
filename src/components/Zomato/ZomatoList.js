@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ZomatoRestaurant from './ZomatoRestaurant';
 
+
 const ZomatoList = (props) => {
 
     const [restaurants, setRestaurants] = useState([]);
@@ -28,6 +29,7 @@ const ZomatoList = (props) => {
             {console.log(restaurants)}
             {/* { restaurants.length > 0 ? <ZomatoRestaurant restaurants={restaurants} /> : null} */}
             <ZomatoRestaurant restaurants={restaurants} />
+            
 
 
         </div>
